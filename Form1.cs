@@ -83,15 +83,11 @@ namespace ЛР_8_Фильтрация_и_сортировка_табличных
                     case "Coeff_cost": PavilionsChange = PavilionsChange.OrderByDescending(p => p.Coeff_cost).ToList(); break;
                 }
             loadStartData();
-        }
-        private void LoadOrder()
-        {
             PavilionsChange = checkBox1.Checked ?
                 PavilionsChange.OrderByDescending(p => p.GetType().GetProperties().
                 First(x => x.Name == comboBox1.SelectedItem.ToString()).GetValue(p)).ToList()
                 : PavilionsChange.OrderBy(p => p.GetType().GetProperties().
-                First(x => x.Name == comboBox1.SelectedItem.ToString()).GetValue(p)).ToList();
-            loadStartData();
+                 First(x => x.Name == comboBox1.SelectedItem.ToString()).GetValue(p)).ToList();
         }
     }
 }
