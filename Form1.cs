@@ -21,7 +21,7 @@ namespace ЛР_8_Фильтрация_и_сортировка_табличных
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            PavilionsChange = pavilions = database = database.Pavilion.ToList();
+            PavilionsChange = pavilions = database.Pavilion.ToList();
             loadStartData();
             LoadDataCombo();
         }
