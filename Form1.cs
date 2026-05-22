@@ -58,30 +58,6 @@ namespace ЛР_8_Фильтрация_и_сортировка_табличных
         }
         private void LoadOrder()
         {
-            if(checkBox1.Checked==false)
-            {
-                switch(comboBox1.SelectedItem)
-                {
-                    case "Num_pav": PavilionsChange = PavilionsChange.OrderBy(p => p.Num_pav).ToList(); break;
-                    case "ID_mall": PavilionsChange = PavilionsChange.OrderBy(p => p.ID_mall).ToList(); break;
-                    case "Floor": PavilionsChange = PavilionsChange.OrderBy(p => p.Floor).ToList(); break;
-                    case "Status": PavilionsChange = PavilionsChange.OrderBy(p => p.Status).ToList(); break;
-                    case "Square": PavilionsChange = PavilionsChange.OrderBy(p => p.Square).ToList(); break;
-                    case "Cost_meter": PavilionsChange = PavilionsChange.OrderBy(p => p.Cost_meter).ToList(); break;
-                    case "Coeff_cost": PavilionsChange = PavilionsChange.OrderBy(p => p.Coeff_cost).ToList(); break;
-                }
-            }
-            else if(checkBox1.Checked==true)
-                switch(comboBox1.SelectedItem)
-                {
-                    case "Num_pav": PavilionsChange = PavilionsChange.OrderByDescending(p => p.Num_pav).ToList(); break;
-                    case "ID_mall": PavilionsChange = PavilionsChange.OrderByDescending(p => p.ID_mall).ToList(); break;
-                    case "Floor": PavilionsChange = PavilionsChange.OrderByDescending(p => p.Floor).ToList(); break;
-                    case "Status": PavilionsChange = PavilionsChange.OrderByDescending(p => p.Status).ToList(); break;
-                    case "Square": PavilionsChange = PavilionsChange.OrderByDescending(p => p.Square).ToList(); break;
-                    case "Cost_meter": PavilionsChange = PavilionsChange.OrderByDescending(p => p.Cost_meter).ToList(); break;
-                    case "Coeff_cost": PavilionsChange = PavilionsChange.OrderByDescending(p => p.Coeff_cost).ToList(); break;
-                }
             loadStartData();
             PavilionsChange = checkBox1.Checked ?
                 PavilionsChange.OrderByDescending(p => p.GetType().GetProperties().
